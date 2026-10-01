@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 3,
+  "payloads": [
+    {
+      "payloadId": "dm1q-S9110ZCS8FZI1",
+      "displayName": "Galaxy S23 (SM-S9110) | Kernel 5.15.189",
+      "models": [
+        "SM-S9110"
+      ],
+      "kernelVersions": [
+        "5.15.189"
+      ],
+      "exploit": {
+        "url": "https://raw.githubusercontent.com/yexiaoqq/Root-My-Galaxy-Payloads01/main/cve-2026-43499-app.so",
+        "size": 104128
+      },
+      "kernelsu": {
+        "url": "https://raw.githubusercontent.com/yexiaoqq/Root-My-Galaxy-Payloads01/main/ksud-dm3q-S918BXXSAFZF5-kdp",
+        "size": 4879560
+      }
+    }
+  ]
+}
